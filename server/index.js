@@ -4,8 +4,7 @@ const cors    = require('cors');
 const fs      = require('fs');
 const path    = require('path');
 const bcrypt  = require('bcryptjs');
-
-const multer = require('multer');
+const multer  = require('multer');
 
 const storage = multer.diskStorage({
   destination: path.join(__dirname, '..', 'client', 'img', 'loghi'),
@@ -39,6 +38,8 @@ function salvaDati(dati) {
 
 app.use(cors());
 app.use(express.json());
+
+// Serve i file statici del frontend (CSS, JS, Immagini)
 app.use(express.static(path.join(__dirname, '..', 'client')));
 
 // ─── AUTH ────────────────────────────────────────────────────
@@ -98,7 +99,6 @@ app.delete('/api/gironi/:id', (req, res) => {
   const dati = leggiDati();
   const id   = parseInt(req.params.id);
 
-  // Elimina anche le partite associate al girone
   dati.partite = dati.partite.filter(p => p.gironeId !== id);
   dati.gironi  = dati.gironi.filter(g => g.id !== id);
 
@@ -206,23 +206,21 @@ app.post('/api/reset', (req, res) => {
   res.json({ ok: true });
 });
 
-// ─── FALLBACK SPA ────────────────────────────────────────────
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'client', 'index.html'));
-});
-
-// ─── UPLOAD LOGO ─────────────────────────────────────────────
+// ─── UPLOAD LOGO (SPOSTATO SOPRA IL FALLBACK) ────────────────
 app.post('/api/upload-logo', upload.single('logo'), (req, res) => {
   if (!req.file) return res.status(400).json({ errore: 'Nessun file ricevuto' });
   const url = `/img/loghi/${req.file.filename}`;
   res.json({ url });
 });
 
+// ─── FALLBACK SPA (SEMPRE PER ULTIMO) ────────────────────────
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'client', 'index.html'));
+});
+
 // ─── AVVIO ───────────────────────────────────────────────────
 inizializza().then(() => {
   app.listen(PORT, () => {
-    console.log(`✓ Server avviato su http://localhost:${PORT}`);
-    console.log(`  Pubblica:  http://localhost:${PORT}/`);
-    console.log(`  Admin:     http://localhost:${PORT}/admin.html`);
+    console.log(`✓ Server avviato sulla porta ${PORT}`);
   });
 });
