@@ -1,0 +1,963 @@
+{
+  "torneo": {
+    "nome": "Torneo Amatori Savigliano",
+    "edizione": "2026",
+    "luogo": "Savigliano"
+  },
+  "gironi": [
+    {
+      "id": 1779788331559,
+      "nome": "Girone A",
+      "fase": 1,
+      "campo": "PALAFERRUA",
+      "squadre": [
+        {
+          "id": 1779788376072,
+          "nome": "Pallacanestro Farigliano A",
+          "logo": "/img/loghi/1779788376065.png"
+        },
+        {
+          "id": 1779788392970,
+          "nome": "Pallacanestro Mondovì",
+          "logo": "/img/loghi/1779788392960.png"
+        },
+        {
+          "id": 1779788405159,
+          "nome": "Noki Pinerolo",
+          "logo": "/img/loghi/1779788405154.jpeg"
+        },
+        {
+          "id": 1779788417410,
+          "nome": "Basket Loano",
+          "logo": "/img/loghi/1779788417405.png"
+        }
+      ]
+    },
+    {
+      "id": 1779788439097,
+      "nome": "Girone B",
+      "fase": 1,
+      "campo": "PALAZZETTO \"A\"",
+      "squadre": [
+        {
+          "id": 1779788457388,
+          "nome": "Amatori Savigliano",
+          "logo": "/img/loghi/1779788457382.png"
+        },
+        {
+          "id": 1779788466127,
+          "nome": "Abet Bra",
+          "logo": "/img/loghi/1779788466123.png"
+        },
+        {
+          "id": 1779788473121,
+          "nome": "Collegno Basket",
+          "logo": "/img/loghi/1779788473117.png"
+        },
+        {
+          "id": 1779788498480,
+          "nome": "Basket Pegli",
+          "logo": "/img/loghi/1779788498475.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 1779788521532,
+      "nome": "Girone C",
+      "fase": 1,
+      "campo": "Palazzetto \"B\"",
+      "squadre": [
+        {
+          "id": 1779788547980,
+          "nome": "B.C. Gators",
+          "logo": "/img/loghi/1779788547976.png"
+        },
+        {
+          "id": 1779788565499,
+          "nome": "Pallacanestro Farigliano B",
+          "logo": "/img/loghi/1779788565494.png"
+        },
+        {
+          "id": 1779788573371,
+          "nome": "Pallacanestro Vado",
+          "logo": "/img/loghi/1779788573366.png"
+        },
+        {
+          "id": 1779788586581,
+          "nome": "A.S.D. Beinaschese",
+          "logo": "/img/loghi/1779788586576.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 1779788612473,
+      "nome": "Girone D",
+      "fase": 1,
+      "campo": "MONASTEROLO",
+      "squadre": [
+        {
+          "id": 1779788629690,
+          "nome": "Promosport Cuneo",
+          "logo": "/img/loghi/1779788629686.png"
+        },
+        {
+          "id": 1779788640430,
+          "nome": "Pallacanestro Saluzzo",
+          "logo": "/img/loghi/1779788640425.png"
+        },
+        {
+          "id": 1779788647303,
+          "nome": "5 Pari",
+          "logo": "/img/loghi/1779788647298.png"
+        },
+        {
+          "id": 1779788660726,
+          "nome": "Pantere Villafalletto",
+          "logo": "/img/loghi/1779788660721.png"
+        }
+      ]
+    }
+  ],
+  "partite": [
+    {
+      "id": 1779822389415,
+      "gironeId": 1779788331559,
+      "fase": 1,
+      "squadraCasaId": 1779788376072,
+      "squadraOspiteId": 1779788392970,
+      "data": "2026-06-01",
+      "ora": "08:30",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779822494840,
+      "gironeId": 1779788331559,
+      "fase": 1,
+      "squadraCasaId": 1779788405159,
+      "squadraOspiteId": 1779788417410,
+      "data": "2026-06-01",
+      "ora": "09:45",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779822579392,
+      "gironeId": 1779788331559,
+      "fase": 1,
+      "squadraCasaId": 1779788376072,
+      "squadraOspiteId": 1779788405159,
+      "data": "2026-06-01",
+      "ora": "11:00",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779822586270,
+      "gironeId": 1779788331559,
+      "fase": 1,
+      "squadraCasaId": 1779788392970,
+      "squadraOspiteId": 1779788417410,
+      "data": "2026-06-01",
+      "ora": "12:15",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779822595122,
+      "gironeId": 1779788331559,
+      "fase": 1,
+      "squadraCasaId": 1779788376072,
+      "squadraOspiteId": 1779788417410,
+      "data": "2026-06-01",
+      "ora": "14:30",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779822610046,
+      "gironeId": 1779788331559,
+      "fase": 1,
+      "squadraCasaId": 1779788392970,
+      "squadraOspiteId": 1779788405159,
+      "data": "2026-06-01",
+      "ora": "15:45",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779822917756,
+      "gironeId": 1779788439097,
+      "fase": 1,
+      "squadraCasaId": 1779788457388,
+      "squadraOspiteId": 1779788466127,
+      "data": "2026-06-01",
+      "ora": "08:30",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779822924549,
+      "gironeId": 1779788439097,
+      "fase": 1,
+      "squadraCasaId": 1779788473121,
+      "squadraOspiteId": 1779788498480,
+      "data": "2026-06-01",
+      "ora": "09:45",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779822931481,
+      "gironeId": 1779788439097,
+      "fase": 1,
+      "squadraCasaId": 1779788457388,
+      "squadraOspiteId": 1779788473121,
+      "data": "2026-06-01",
+      "ora": "11:00",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779822936538,
+      "gironeId": 1779788439097,
+      "fase": 1,
+      "squadraCasaId": 1779788466127,
+      "squadraOspiteId": 1779788498480,
+      "data": "2026-06-01",
+      "ora": "12:15",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779822949718,
+      "gironeId": 1779788439097,
+      "fase": 1,
+      "squadraCasaId": 1779788457388,
+      "squadraOspiteId": 1779788498480,
+      "data": "2026-06-01",
+      "ora": "14:30",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779822958211,
+      "gironeId": 1779788439097,
+      "fase": 1,
+      "squadraCasaId": 1779788466127,
+      "squadraOspiteId": 1779788473121,
+      "data": "2026-06-01",
+      "ora": "15:45",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779823029479,
+      "gironeId": 1779788521532,
+      "fase": 1,
+      "squadraCasaId": 1779788547980,
+      "squadraOspiteId": 1779788586581,
+      "data": "2026-06-01",
+      "ora": "08:30",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779823037815,
+      "gironeId": 1779788521532,
+      "fase": 1,
+      "squadraCasaId": 1779788565499,
+      "squadraOspiteId": 1779788547980,
+      "data": "2026-06-01",
+      "ora": "09:45",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779823044102,
+      "gironeId": 1779788521532,
+      "fase": 1,
+      "squadraCasaId": 1779788586581,
+      "squadraOspiteId": 1779788573371,
+      "data": "2026-06-01",
+      "ora": "11:00",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779823050892,
+      "gironeId": 1779788521532,
+      "fase": 1,
+      "squadraCasaId": 1779788573371,
+      "squadraOspiteId": 1779788565499,
+      "data": "2026-06-01",
+      "ora": "12:15",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779823057617,
+      "gironeId": 1779788521532,
+      "fase": 1,
+      "squadraCasaId": 1779788586581,
+      "squadraOspiteId": 1779788565499,
+      "data": "2026-06-01",
+      "ora": "14:30",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779823065343,
+      "gironeId": 1779788521532,
+      "fase": 1,
+      "squadraCasaId": 1779788547980,
+      "squadraOspiteId": 1779788573371,
+      "data": "2026-06-01",
+      "ora": "15:45",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779823256829,
+      "gironeId": 1779788612473,
+      "fase": 1,
+      "squadraCasaId": 1779788629690,
+      "squadraOspiteId": 1779788640430,
+      "data": "2026-06-01",
+      "ora": "08:30",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779823264462,
+      "gironeId": 1779788612473,
+      "fase": 1,
+      "squadraCasaId": 1779788647303,
+      "squadraOspiteId": 1779788660726,
+      "data": "2026-06-01",
+      "ora": "09:45",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779823271887,
+      "gironeId": 1779788612473,
+      "fase": 1,
+      "squadraCasaId": 1779788629690,
+      "squadraOspiteId": 1779788647303,
+      "data": "2026-06-01",
+      "ora": "11:00",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779823279446,
+      "gironeId": 1779788612473,
+      "fase": 1,
+      "squadraCasaId": 1779788640430,
+      "squadraOspiteId": 1779788660726,
+      "data": "2026-06-01",
+      "ora": "12:15",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779823286237,
+      "gironeId": 1779788612473,
+      "fase": 1,
+      "squadraCasaId": 1779788629690,
+      "squadraOspiteId": 1779788660726,
+      "data": "2026-06-01",
+      "ora": "14:30",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    },
+    {
+      "id": 1779823298243,
+      "gironeId": 1779788612473,
+      "fase": 1,
+      "squadraCasaId": 1779788640430,
+      "squadraOspiteId": 1779788647303,
+      "data": "2026-06-01",
+      "ora": "15:45",
+      "campo": "",
+      "puntiCasa": null,
+      "puntiOspite": null,
+      "quarti": {
+        "casa": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ospite": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "overtime": {
+        "casa": [],
+        "ospite": []
+      },
+      "giocata": false
+    }
+  ]
+}

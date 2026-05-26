@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Torneo Amatori Savigliano</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/classifica.css">
+  <link rel="stylesheet" href="css/partite.css">
+</head>
+<body>
+
+  <!-- ─── HEADER ─────────────────────────────────────────── -->
+  <header class="header">
+    <div class="header-top">
+
+      <!-- Logo torneo (appare quando viene caricato) -->
+      <img class="header-logo"
+           id="header-logo"
+           src="img/logo.png"
+           alt="Logo"
+           onerror="this.style.display='none'">
+
+      <div class="header-titoli">
+        <div class="header-nome" id="header-nome">Torneo Amatori Savigliano</div>
+        <div class="header-sottotitolo" id="header-sottotitolo">2026</div>
+      </div>
+
+    </div>
+
+    <!-- Tab navigazione -->
+    <nav class="nav-tabs">
+      <button class="nav-tab active" data-tab="partite"
+              onclick="switchTab('partite')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="16" rx="2"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+          <line x1="8" y1="4" x2="8" y2="20"/>
+        </svg>
+        Partite
+      </button>
+      <button class="nav-tab" data-tab="classifica"
+              onclick="switchTab('classifica')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="8" y1="6" x2="21" y2="6"/>
+          <line x1="8" y1="12" x2="21" y2="12"/>
+          <line x1="8" y1="18" x2="21" y2="18"/>
+          <line x1="3" y1="6" x2="3.01" y2="6"/>
+          <line x1="3" y1="12" x2="3.01" y2="12"/>
+          <line x1="3" y1="18" x2="3.01" y2="18"/>
+        </svg>
+        Classifica
+      </button>
+    </nav>
+
+    <!-- Selettore fase -->
+    <div class="fase-banner">
+      <div class="fase-banner-inner">
+        <div>
+          <div class="fase-banner-label">Fase in corso</div>
+          <div class="fase-banner-nome">Fase 1 — Gironi</div>
+        </div>
+        <div class="fase-selector" id="fase-selector"></div>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- ─── CONTENUTO ──────────────────────────────────────── -->
+  <main class="container page">
+
+    <!-- Sezione Partite -->
+    <section class="tab-section" data-section="partite">
+      <div class="partite-filtri" id="partite-filtri"></div>
+      <div class="partite-section">
+        <div id="partite-container">
+          <div class="empty-state"><p>Caricamento...</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sezione Classifica -->
+    <section class="tab-section" data-section="classifica"
+             style="display:none">
+      <div class="classifica-section">
+        <div id="classifica-container">
+          <div class="empty-state"><p>Caricamento...</p></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── SCRIPT ─────────────────────────────────────────── -->
+  <script src="js/api.js"></script>
+  <script src="js/classifica.js"></script>
+  <script src="js/partite.js"></script>
+  <script src="js/main.js"></script>
+
+  <footer style="
+    background-color: #1a1a1a; 
+    color: #ffffff; 
+    text-align: center; 
+    padding: 20px 10px; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-size: 14px; 
+    border-top: 3px solid #d4a373; 
+    margin-top: 40px;
+">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <p style="margin: 0; letter-spacing: 0.5px;">
+            &copy; 2026 Tutti i diritti riservati &mdash; <strong>Davide Messi</strong>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

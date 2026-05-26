@@ -1,0 +1,254 @@
+/* ============================================================
+   CLASSIFICA.CSS — tabelle classifiche per girone e fase
+   ============================================================ */
+
+/* ─── WRAPPER SEZIONE ────────────────────────────────────── */
+.classifica-section {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* ─── CARD GIRONE ────────────────────────────────────────── */
+.girone-card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.girone-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--c-surface2);
+  border-bottom: 1px solid var(--c-border);
+  gap: 12px;
+}
+
+.girone-titolo {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-white);
+}
+
+.girone-titolo span {
+  color: var(--c-accent);
+}
+
+/* ─── TABELLA ────────────────────────────────────────────── */
+.classifica-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.classifica-table thead tr {
+  border-bottom: 1px solid var(--c-border);
+}
+
+.classifica-table thead th {
+  padding: 10px 12px;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.classifica-table thead th:first-child {
+  text-align: left;
+  padding-left: 20px;
+  width: 40px;
+}
+
+.classifica-table tbody tr {
+  border-bottom: 1px solid var(--c-border);
+  transition: background var(--transition);
+}
+
+.classifica-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.classifica-table tbody tr:hover {
+  background: var(--c-surface2);
+}
+
+/* ─── CELLE ──────────────────────────────────────────────── */
+.classifica-table td {
+  padding: 13px 12px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--c-text);
+  white-space: nowrap;
+}
+
+.classifica-table td:first-child {
+  text-align: left;
+  padding-left: 20px;
+  width: 40px;
+}
+
+/* Colonna posizione */
+.col-pos {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--c-text-muted);
+  width: 36px;
+  padding-right: 4px !important;
+}
+
+/* Prime due posizioni evidenziate */
+.pos-1 .col-pos { color: var(--c-accent); }
+.pos-2 .col-pos { color: #a0a8c0; }
+
+/* Riga highlight per qualificate */
+.qualificata {
+  border-left: 3px solid var(--c-accent);
+}
+
+.eliminata {
+  opacity: 1;
+}
+
+/* Colonna squadra */
+.col-squadra {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Colonna punti — evidenziata */
+.col-pt {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--c-accent);
+}
+
+/* Punti portati dalla fase precedente */
+.col-pt-carry {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--c-text-muted);
+}
+
+.col-pt-carry span {
+  color: var(--c-accent);
+  opacity: 0.7;
+}
+
+/* Statistiche numeriche secondarie */
+.col-stat {
+  font-size: 0.9rem;
+  color: var(--c-text-muted);
+}
+
+/* Differenza punti positiva/negativa */
+.diff-pos { color: #60c060; }
+.diff-neg { color: var(--c-accent2); }
+.diff-zero { color: var(--c-text-muted); }
+
+/* ─── LEGENDA ────────────────────────────────────────────── */
+.classifica-legenda {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 20px;
+  background: var(--c-surface2);
+  border-top: 1px solid var(--c-border);
+  flex-wrap: wrap;
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--c-text-muted);
+}
+
+.legenda-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legenda-dot-qualificata { background: var(--c-accent); }
+.legenda-dot-eliminata   { background: var(--c-border); }
+
+/* ─── PUNTI PORTATI (tooltip) ────────────────────────────── */
+.carry-tooltip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.carry-tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000;
+  color: var(--c-text);
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: var(--radius);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition);
+  border: 1px solid var(--c-border);
+  z-index: 10;
+}
+
+.carry-tooltip:hover::after {
+  opacity: 1;
+}
+
+/* ─── STATO VUOTO ────────────────────────────────────────── */
+.classifica-empty {
+  padding: 32px 20px;
+  text-align: center;
+  color: var(--c-text-muted);
+  font-size: 0.95rem;
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .classifica-table thead th,
+  .classifica-table td {
+    padding: 10px 6px;
+    font-size: 0.85rem;
+  }
+
+  .classifica-table thead th:first-child,
+  .classifica-table td:first-child {
+    padding-left: 12px;
+  }
+
+  /* Nascondi colonne meno importanti su mobile */
+  .col-hide-mobile {
+    display: none;
+  }
+
+  .girone-header {
+    padding: 12px 14px;
+  }
+
+  .classifica-legenda {
+    padding: 8px 14px;
+    gap: 10px;
+  }
+}

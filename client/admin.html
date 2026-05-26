@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Torneo Amatori Savigliano</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- ─── LOGIN OVERLAY ──────────────────────────────────── -->
+  <div class="login-overlay" id="login-overlay">
+    <div class="login-card">
+      <img class="login-logo" src="img/logo.png" alt="Logo"
+           onerror="this.style.display='none'">
+      <div class="login-titolo">Admin</div>
+      <div class="login-sub">Torneo Amatori Savigliano</div>
+      <input class="login-input" id="login-password" type="password"
+             placeholder="Password"
+             onkeydown="if(event.key==='Enter') adminLogin()">
+      <div class="login-errore" id="login-errore"></div>
+      <button class="btn btn-primary" style="width:100%"
+              onclick="adminLogin()">Accedi</button>
+    </div>
+  </div>
+
+  <!-- ─── CONTENUTO ADMIN ─────────────────────────────────── -->
+  <div id="admin-content" style="display:none">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-top">
+        <img class="header-logo" src="img/logo.png" alt="Logo"
+             onerror="this.style.display='none'">
+        <div class="header-titoli">
+          <div class="header-nome">Pannello Admin</div>
+          <div class="header-sottotitolo" style="color:var(--c-accent2)">
+            Amatori Savigliano
+          </div>
+        </div>
+        <button class="btn btn-ghost btn-sm" style="margin-left:auto"
+                onclick="adminLogout()">Esci</button>
+      </div>
+
+      <!-- Tab fase -->
+      <nav class="nav-tabs">
+        <button class="nav-tab active" data-admintab="info"
+                onclick="adminSwitchTab('info')">
+          ⚙️ Info Torneo
+        </button>
+        <button class="nav-tab" data-admintab="fase1"
+                onclick="adminSwitchTab('fase1')">
+          Fase 1
+        </button>
+        <button class="nav-tab" data-admintab="fase2"
+                onclick="adminSwitchTab('fase2')">
+          Fase 2
+        </button>
+        <button class="nav-tab" data-admintab="fase3"
+                onclick="adminSwitchTab('fase3')">
+          Fase 3
+        </button>
+        <button class="nav-tab" data-admintab="danger"
+                onclick="adminSwitchTab('danger')"
+                style="color:var(--c-accent2)">
+          ⚠️ Reset
+        </button>
+      </nav>
+    </header>
+
+    <div class="admin-layout">
+
+      <!-- ─── TAB: INFO TORNEO ─────────────────────────── -->
+      <div class="admin-tab-section" data-adminsection="info">
+        <section class="admin-section">
+          <div class="admin-section-header">
+            <h2 class="admin-section-titolo">Info <span>Torneo</span></h2>
+          </div>
+          <div class="card">
+            <div class="admin-form-row">
+              <div class="admin-field">
+                <label>Nome torneo</label>
+                <input class="admin-input" id="torneo-nome-input"
+                       type="text" placeholder="Es. Torneo Amatori Savigliano">
+              </div>
+              <div class="admin-field">
+                <label>Edizione / Anno</label>
+                <input class="admin-input" id="torneo-edizione-input"
+                       type="text" placeholder="Es. 2026">
+              </div>
+              <div class="admin-field">
+                <label>Luogo</label>
+                <input class="admin-input" id="torneo-luogo-input"
+                       type="text" placeholder="Es. Savigliano">
+              </div>
+              <button class="btn btn-primary btn-sm" style="align-self:flex-end"
+                      onclick="salvaTorneoInfo()">💾 Salva</button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ─── TAB: FASE 1 ──────────────────────────────── -->
+      <div class="admin-tab-section" data-adminsection="fase1" style="display:none">
+        <section class="admin-section">
+          <div class="admin-section-header">
+            <h2 class="admin-section-titolo">Gironi <span>Fase 1</span></h2>
+          </div>
+
+          <!-- Crea girone -->
+          <div class="card" style="margin-bottom:16px">
+            <div class="label" style="margin-bottom:12px">Crea nuovo girone</div>
+            <div class="admin-form-row">
+              <div class="admin-field">
+                <label>Nome girone</label>
+                <input class="admin-input" id="nuovo-girone-nome-1"
+                       type="text" placeholder="Es. Girone A">
+              </div>
+              <div class="admin-field">
+                <label>Palazzetto / Campo</label>
+                <input class="admin-input" id="nuovo-girone-campo-1"
+                       type="text" placeholder="Es. Palazzetto Colletta">
+              </div>
+              <button class="btn btn-primary btn-sm" style="align-self:flex-end"
+                      onclick="creaGironeFase(1)">+ Crea girone</button>
+            </div>
+          </div>
+
+          <div id="gironi-admin-container-1"></div>
+        </section>
+
+        <section class="admin-section" style="margin-top:32px">
+          <div class="admin-section-header">
+            <h2 class="admin-section-titolo">Partite <span>Fase 1</span></h2>
+          </div>
+          <div class="card" style="margin-bottom:16px">
+            <div class="label" style="margin-bottom:12px">Crea nuova partita</div>
+            <div id="nuova-partita-form-1"></div>
+          </div>
+          <div id="partite-admin-container-1"></div>
+        </section>
+      </div>
+
+      <!-- ─── TAB: FASE 2 ──────────────────────────────── -->
+      <div class="admin-tab-section" data-adminsection="fase2" style="display:none">
+        <section class="admin-section">
+          <div class="admin-section-header">
+            <h2 class="admin-section-titolo">Gironi <span>Fase 2</span></h2>
+          </div>
+          <div class="card" style="margin-bottom:16px">
+            <div class="label" style="margin-bottom:12px">Crea nuovo girone</div>
+            <div class="admin-form-row">
+              <div class="admin-field">
+                <label>Nome girone</label>
+                <input class="admin-input" id="nuovo-girone-nome-2"
+                       type="text" placeholder="Es. Girone AB">
+              </div>
+              <div class="admin-field">
+                <label>Palazzetto / Campo</label>
+                <input class="admin-input" id="nuovo-girone-campo-2"
+                       type="text" placeholder="Es. Palazzetto Colletta">
+              </div>
+              <button class="btn btn-primary btn-sm" style="align-self:flex-end"
+                      onclick="creaGironeFase(2)">+ Crea girone</button>
+            </div>
+          </div>
+          <div id="gironi-admin-container-2"></div>
+        </section>
+
+        <section class="admin-section" style="margin-top:32px">
+          <div class="admin-section-header">
+            <h2 class="admin-section-titolo">Partite <span>Fase 2</span></h2>
+          </div>
+          <div class="card" style="margin-bottom:16px">
+            <div class="label" style="margin-bottom:12px">Crea nuova partita</div>
+            <div id="nuova-partita-form-2"></div>
+          </div>
+          <div id="partite-admin-container-2"></div>
+        </section>
+      </div>
+
+      <!-- ─── TAB: FASE 3 ──────────────────────────────── -->
+      <div class="admin-tab-section" data-adminsection="fase3" style="display:none">
+        <section class="admin-section">
+          <div class="admin-section-header">
+            <h2 class="admin-section-titolo">Gironi <span>Fase 3</span></h2>
+          </div>
+          <div class="card" style="margin-bottom:16px">
+            <div class="label" style="margin-bottom:12px">Crea nuovo girone</div>
+            <div class="admin-form-row">
+              <div class="admin-field">
+                <label>Nome girone</label>
+                <input class="admin-input" id="nuovo-girone-nome-3"
+                       type="text" placeholder="Es. Girone Finale">
+              </div>
+              <div class="admin-field">
+                <label>Palazzetto / Campo</label>
+                <input class="admin-input" id="nuovo-girone-campo-3"
+                       type="text" placeholder="Es. Palazzetto Colletta">
+              </div>
+              <button class="btn btn-primary btn-sm" style="align-self:flex-end"
+                      onclick="creaGironeFase(3)">+ Crea girone</button>
+            </div>
+          </div>
+          <div id="gironi-admin-container-3"></div>
+        </section>
+
+        <section class="admin-section" style="margin-top:32px">
+          <div class="admin-section-header">
+            <h2 class="admin-section-titolo">Partite <span>Fase 3</span></h2>
+          </div>
+          <div class="card" style="margin-bottom:16px">
+            <div class="label" style="margin-bottom:12px">Crea nuova partita</div>
+            <div id="nuova-partita-form-3"></div>
+          </div>
+          <div id="partite-admin-container-3"></div>
+        </section>
+      </div>
+
+      <!-- ─── TAB: RESET ───────────────────────────────── -->
+      <div class="admin-tab-section" data-adminsection="danger" style="display:none">
+        <section class="admin-section">
+          <div class="admin-section-header">
+            <h2 class="admin-section-titolo" style="color:var(--c-accent2)">
+              Zona <span>Pericolosa</span>
+            </h2>
+          </div>
+          <div class="card" style="border-color:var(--c-accent2)">
+            <p style="color:var(--c-text-muted);margin-bottom:16px;font-size:0.9rem">
+              Queste azioni sono irreversibili. Usare con cautela.
+            </p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+              <button class="btn btn-danger" onclick="resetRisultati()">
+                ↩ Reset tutti i risultati
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── TOAST ───────────────────────────────────────────── -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- ─── SCRIPT ─────────────────────────────────────────── -->
+  <script src="js/api.js"></script>
+  <script src="js/admin.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      adminInit();
+    });
+
+    function adminSwitchTab(tab) {
+      document.querySelectorAll('.nav-tab[data-admintab]').forEach(el => {
+        el.classList.toggle('active', el.dataset.admintab === tab);
+      });
+      document.querySelectorAll('.admin-tab-section').forEach(el => {
+        el.style.display = el.dataset.adminsection === tab ? 'block' : 'none';
+      });
+    }
+
+    async function resetRisultati() {
+      if (!confirm('Sei sicuro? Verranno azzerati TUTTI i risultati.')) return;
+      try {
+        await PartiteAPI.reset();
+        toast('Tutti i risultati azzerati.', 'ok');
+        await adminCaricaDati();
+        adminRender();
+      } catch(e) {
+        toast(e.message, 'errore');
+      }
+    }
+  </script>
+
+  <footer style="
+    background-color: #1a1a1a; 
+    color: #ffffff; 
+    text-align: center; 
+    padding: 20px 10px; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-size: 14px; 
+    border-top: 3px solid #d4a373; 
+    margin-top: 40px;
+">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <p style="margin: 0; letter-spacing: 0.5px;">
+            &copy; 2026 Tutti i diritti riservati &mdash; <strong>Davide Messi</strong>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
