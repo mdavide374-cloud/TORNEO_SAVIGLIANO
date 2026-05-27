@@ -6,8 +6,15 @@ const path    = require('path');
 const bcrypt  = require('bcryptjs');
 const multer  = require('multer');
 
+// ─── CARTELLA LOGHI ──────────────────────────────────────────
+// La crea automaticamente se non esiste (necessario su Railway)
+const LOGHI_DIR = path.join(__dirname, '..', 'client', 'img', 'loghi');
+if (!fs.existsSync(LOGHI_DIR)) {
+  fs.mkdirSync(LOGHI_DIR, { recursive: true });
+}
+
 const storage = multer.diskStorage({
-  destination: path.join(__dirname, '..', 'client', 'img', 'loghi'),
+  destination: LOGHI_DIR,
   filename: (req, file, cb) => {
     const ext  = path.extname(file.originalname);
     const nome = Date.now() + ext;
@@ -20,7 +27,8 @@ const app       = express();
 const PORT      = process.env.PORT || 8080;
 const DATA_FILE = path.join(__dirname, 'data.json');
 
-const ADMIN_PASSWORD_PLAIN = 'savigliano2026';
+// Password da variabile d'ambiente, con fallback locale
+const ADMIN_PASSWORD_PLAIN = process.env.ADMIN_PASSWORD || 'savigliano2026';
 let adminPasswordHash = null;
 
 async function inizializza() {
@@ -38,8 +46,6 @@ function salvaDati(dati) {
 
 app.use(cors());
 app.use(express.json());
-
-// Serve i file statici del frontend (CSS, JS, Immagini)
 app.use(express.static(path.join(__dirname, '..', 'client')));
 
 // ─── AUTH ────────────────────────────────────────────────────
@@ -89,7 +95,7 @@ app.put('/api/gironi/:id', (req, res) => {
   if (req.body.nome    !== undefined) girone.nome    = req.body.nome;
   if (req.body.fase    !== undefined) girone.fase    = req.body.fase;
   if (req.body.squadre !== undefined) girone.squadre = req.body.squadre;
-  if (req.body.campo !== undefined) girone.campo = req.body.campo;
+  if (req.body.campo   !== undefined) girone.campo   = req.body.campo;
 
   salvaDati(dati);
   res.json(girone);
@@ -114,8 +120,8 @@ app.post('/api/gironi/:id/squadre', (req, res) => {
 
   const squadra = {
     id:   Date.now(),
-    nome: req.body.nome  || 'Squadra',
-    logo: req.body.logo  || ''
+    nome: req.body.nome || 'Squadra',
+    logo: req.body.logo || ''
   };
   girone.squadre.push(squadra);
   salvaDati(dati);
@@ -150,6 +156,8 @@ app.post('/api/partite', (req, res) => {
     campo:           req.body.campo           || null,
     puntiCasa:       null,
     puntiOspite:     null,
+    canestriCasa:    null,
+    canestriOspite:  null,
     quarti: {
       casa:   [null, null, null, null, null, null],
       ospite: [null, null, null, null, null, null]
@@ -196,24 +204,26 @@ app.delete('/api/partite/:id', (req, res) => {
 app.post('/api/reset', (req, res) => {
   const dati = leggiDati();
   dati.partite.forEach(p => {
-    p.puntiCasa   = null;
-    p.puntiOspite = null;
-    p.quarti      = { casa: [null,null,null,null,null,null], ospite: [null,null,null,null,null,null] };
-    p.overtime    = { casa: [], ospite: [] };
-    p.giocata     = false;
+    p.puntiCasa      = null;
+    p.puntiOspite    = null;
+    p.canestriCasa   = null;
+    p.canestriOspite = null;
+    p.quarti         = { casa: [null,null,null,null,null,null], ospite: [null,null,null,null,null,null] };
+    p.overtime       = { casa: [], ospite: [] };
+    p.giocata        = false;
   });
   salvaDati(dati);
   res.json({ ok: true });
 });
 
-// ─── UPLOAD LOGO (SPOSTATO SOPRA IL FALLBACK) ────────────────
+// ─── UPLOAD LOGO ─────────────────────────────────────────────
 app.post('/api/upload-logo', upload.single('logo'), (req, res) => {
   if (!req.file) return res.status(400).json({ errore: 'Nessun file ricevuto' });
   const url = `/img/loghi/${req.file.filename}`;
   res.json({ url });
 });
 
-// ─── FALLBACK SPA (SEMPRE PER ULTIMO) ────────────────────────
+// ─── FALLBACK SPA ────────────────────────────────────────────
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'client', 'index.html'));
 });
@@ -222,5 +232,6 @@ app.get('*', (req, res) => {
 inizializza().then(() => {
   app.listen(PORT, () => {
     console.log(`✓ Server avviato sulla porta ${PORT}`);
+    console.log(`  Ambiente: ${process.env.NODE_ENV || 'development'}`);
   });
 });
