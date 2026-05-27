@@ -1,10 +1,10 @@
 {
   "name": "torneo-savigliano",
   "version": "1.0.0",
-  "description": "Sito torneo basket Amatori Savigliano",
-  "main": "index.js",
+  "description": "Torneo Amatori Savigliano",
+  "main": "server/index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server/index.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
