@@ -531,3 +531,132 @@
   color: #000;
   border-color: var(--c-accent);
 }
+
+/* ─── RESPONSIVE MOBILE ──────────────────────────────────── */
+@media (max-width: 768px) {
+
+  .admin-layout {
+    padding: 16px 10px 48px;
+    gap: 20px;
+  }
+
+  /* Header */
+  .header-top {
+    padding: 10px 12px;
+  }
+
+  .nav-tabs {
+    padding: 0 8px;
+  }
+
+  .nav-tab {
+    padding: 10px 10px;
+    font-size: 0.78rem;
+  }
+
+  /* Sezioni */
+  .admin-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-form-row {
+    flex-direction: column;
+  }
+
+  .admin-field {
+    width: 100%;
+    min-width: unset;
+  }
+
+  /* Gironi */
+  .girone-admin-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .girone-admin-header div {
+    flex-wrap: wrap;
+  }
+
+  /* Partite admin */
+  .partita-admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* Form tempini — layout verticale su mobile */
+  .quarti-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .quarti-form-header {
+    display: none;
+  }
+
+  /* Ogni riga squadra diventa un blocco */
+  .quarti-form > span.quarti-form-label {
+    font-size: 0.8rem;
+    margin-top: 8px;
+    display: block;
+  }
+
+  /* Gli input tempini si mettono in griglia 3x2 */
+  .quarti-form > input.quarto-input {
+    display: inline-block;
+    width: calc(33% - 6px);
+  }
+
+  /* Wrapper tempini per riga squadra */
+  .tempini-riga {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .totale-display {
+    text-align: left;
+    font-size: 1.1rem;
+    margin-top: 4px;
+  }
+
+  /* Bottoni azione */
+  .risultato-form > div {
+    flex-direction: column;
+  }
+
+  .risultato-form .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Squadre */
+  .squadra-item {
+    flex-wrap: wrap;
+  }
+
+  /* Form nuova partita */
+  #nuova-partita-form-1 .admin-form-row,
+  #nuova-partita-form-2 .admin-form-row,
+  #nuova-partita-form-3 .admin-form-row {
+    flex-direction: column;
+  }
+
+  /* Filtri */
+  .filtri-riga {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filtri-btn-group {
+    flex-wrap: wrap;
+  }
+
+  /* Card login */
+  .login-card {
+    padding: 24px 16px;
+  }
+}
